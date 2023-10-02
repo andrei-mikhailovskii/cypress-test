@@ -10,10 +10,6 @@ describe('Click NPM Install Cypress button', () => {
 
     it('Checks if NPM Install Cypress button is clicked', () => {
 
-        cy.get('[aria-label="Cookie Consent Banner"]')
-        .find('button:contains("Reject All")')
-        .click();
-
         cy.get('button:contains("npm install cypress")')
         .should('be.visible')
         .click();
