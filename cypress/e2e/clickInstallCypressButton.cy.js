@@ -1,16 +1,24 @@
 describe('Click NPM Install Cypress button', () => {
 
-    // cy.visit('/');
+    beforeEach(() => {
+
+        cy.intercept('GET', '/').as('initial');
+        cy.visit('/');
+        cy.wait('@initial');
+    
+      });
 
     it('Checks if NPM Install Cypress button is clicked', () => {
-        cy.visit('https://www.cypress.io/');
-        cy.get('astro-island > .border')
+
+        cy.get('[aria-label="Cookie Consent Banner"]')
+        .find('button:contains("Reject All")')
+        .click();
+
+        cy.get('button:contains("npm install cypress")')
         .should('be.visible')
         .click();
 
-        cy.wait(1000);
-
-        cy.get('.slide-out-enter-to > .whitespace-nowrap')
+        cy.get('[data-cy="modal-install-copy"]')
         .should('be.visible')
         .click()
         .then(() => {
@@ -19,8 +27,8 @@ describe('Click NPM Install Cypress button', () => {
                     expect(text).to.eq('npm install cypress --save-dev');
                 })
             })
-        })
+        });
 
-    })
+    });
 
-})
+});
