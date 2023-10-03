@@ -2,9 +2,7 @@ describe('Check Main Page sections', () => {
 
     beforeEach(() => {
 
-        cy.intercept('GET', '/').as('initial');
         cy.visit('/');
-        cy.wait('@initial');
     
       });
 

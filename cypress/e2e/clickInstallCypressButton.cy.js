@@ -2,7 +2,9 @@ describe('Click NPM Install Cypress button', () => {
 
     beforeEach(() => {
 
+        cy.intercept('GET', '/').as('initial');
         cy.visit('/');
+        cy.wait('@initial');
     
       });
 
