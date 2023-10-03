@@ -2,13 +2,11 @@ describe('Click NPM Install Cypress button', () => {
 
     beforeEach(() => {
 
-        cy.intercept('GET', '/').as('initial');
         cy.visit('/');
-        cy.wait('@initial');
     
       });
 
-    it('Checks if NPM Install Cypress button is clicked', () => {
+    it('Checks if info copied to clipboard', () => {
 
         cy.get('button:contains("npm install cypress")')
         .should('be.visible')
