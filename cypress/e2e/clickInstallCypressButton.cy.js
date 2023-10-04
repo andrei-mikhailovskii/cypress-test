@@ -1,8 +1,7 @@
+Cypress._.times(100, () => {
 describe('Click NPM Install Cypress button', () => {
 
     beforeEach(() => {
-
-        cy.viewport(1920, 1080);
 
         cy.intercept('POST', 'https://cloud.cypress.io/graphql').as('graphql');
         cy.visit('/');
@@ -36,3 +35,4 @@ describe('Click NPM Install Cypress button', () => {
     });
 
 });
+})
