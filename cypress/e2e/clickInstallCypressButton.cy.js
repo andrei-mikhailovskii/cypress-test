@@ -4,14 +4,6 @@ describe('Click NPM Install Cypress button', () => {
     beforeEach(() => {
 
         cy.visit('/');
-
-        cy.wait(2000); 
-
-        //cy.get('[aria-label="Cookie Consent Banner"]').then((banner) => {
-        //    if (banner.is(':visible')) {
-        //        cy.contains('Reject All').click();
-        //    }
-        //});
     
     });
 
@@ -20,8 +12,6 @@ describe('Click NPM Install Cypress button', () => {
         cy.get('button:contains("npm install cypress")')
         .should('be.visible')
         .click();
-
-        cy.wait(1000); 
 
         cy.get('[data-cy="modal-install-copy"]')
         .should('be.visible')
