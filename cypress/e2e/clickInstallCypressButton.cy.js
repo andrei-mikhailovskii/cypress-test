@@ -4,7 +4,9 @@ describe('Click NPM Install Cypress button', () => {
     beforeEach(() => {
 
         cy.visit('/');
-        
+
+        cy.wait(1000);
+
     });
 
     it('Checks if info copied to clipboard', () => {
