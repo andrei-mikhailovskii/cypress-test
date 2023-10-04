@@ -2,11 +2,17 @@ describe('Click NPM Install Cypress button', () => {
 
     beforeEach(() => {
 
-        cy.intercept('GET', '/').as('initial');
+        cy.intercept('POST', 'https://cloud.cypress.io/graphql').as('graphql');
         cy.visit('/');
-        cy.wait('@initial');
+        cy.wait('@graphql');
+
+        cy.get('[aria-label="Cookie Consent Banner"]').then((banner) => {
+            if (banner.is(':visible')) {
+                cy.contains('Reject All').click();
+            }
+        });
     
-      });
+    });
 
     it('Checks if info copied to clipboard', () => {
 
