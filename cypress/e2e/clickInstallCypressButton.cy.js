@@ -1,4 +1,3 @@
-Cypress._.times(10, () => {
 describe('Click NPM Install Cypress button', () => {
 
     beforeEach(() => {
@@ -16,8 +15,6 @@ describe('Click NPM Install Cypress button', () => {
     });
 
     it('Checks if info copied to clipboard', () => {
-
-        cy.wait(2000);
 
         cy.get('button:contains("npm install cypress")')
         .should('be.visible')
@@ -37,4 +34,3 @@ describe('Click NPM Install Cypress button', () => {
     });
 
 });
-})
