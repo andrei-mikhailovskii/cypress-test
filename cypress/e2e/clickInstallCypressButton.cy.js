@@ -20,6 +20,8 @@ describe('Click NPM Install Cypress button', () => {
         .should('be.visible')
         .click();
 
+        cy.wait(2000);
+
         cy.get('[data-cy="modal-install-copy"]')
         .should('be.visible')
         .click()
