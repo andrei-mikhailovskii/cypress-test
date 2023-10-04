@@ -4,6 +4,8 @@ describe('Click NPM Install Cypress button', () => {
     beforeEach(() => {
 
         cy.visit('/');
+
+        cy.wait(2000);
     
     });
 
