@@ -5,7 +5,7 @@ describe('Click NPM Install Cypress button', () => {
 
         cy.visit('/');
 
-        cy.wait(1000);
+        cy.wait(2000);
 
     });
 
