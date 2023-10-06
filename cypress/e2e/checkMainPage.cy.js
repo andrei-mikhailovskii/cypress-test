@@ -16,16 +16,11 @@ describe('Check Main Page sections', () => {
           .parent()
           .find('div.font-bold')
           .invoke('text')
-          .then((text) => {
-            const match = text.match(/([\d\.]+)M\+/);
-            if (match) {
-              const downloads = match[1];
-              cy.log(`Weekly downloads (million): ${downloads}`);
-            } else {
-              cy.log('Weekly downloads not found.');
-            }
-        });
+          .invoke('match', /(?<downloadsCount>[\d\.]+)M\+/)
+          .its('groups.downloadsCount', { timeout: 0 }).then((downloadsCount) => {
+            cy.log(`Weekly downloads (million): ${downloadsCount}`);
+          });
 
-    });
+      });
 
-});
+  });
