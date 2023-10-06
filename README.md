@@ -8,7 +8,7 @@ This project is created for practice purposes for E2E testing using Cypress.
 
 Test website: [Cypress](https://www.cypress.io/) website - the main website of the Cypress framework.
 
-## How to Deploy and Run the Project
+## Getting Started
 
 ### Prerequisites
 Make sure the following software is installed on your machine:
@@ -19,7 +19,7 @@ Make sure the following software is installed on your machine:
 ### Steps
 1. Clone the repository: `git clone https://github.com/andrei-mikhailovskii/cypress-test.git`
 2. Navigate to the repository's root folder on your machine
-3. Open the command line in the folder and run the following command: `npx cypress install`
+3. Open the command line in the folder and run the following command: `npm install`
 4. Once Cypress is installed, run the following command: `npx cypress open` (For headless mode, run `npx cypress run` instead and skip the next steps)
 5. Once Cypress is opened, click on "E2E Testing"
 6. Choose any browser and click "Start E2E Testing in {browser'sName}"

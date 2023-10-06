@@ -6,24 +6,24 @@ describe('Check Main Page sections', () => {
     
       });
 
-    it('Checks weekly downloads quantity', () => {
+    it('should log weekly downloads quantity', () => {
 
         cy.get('h2:contains("Loved by OSS")')
-        .scrollIntoView()
-        .should('be.visible');
+          .scrollIntoView()
+          .should('be.visible');
 
         cy.contains('Weekly downloads')
-        .parent()
-        .find('div.font-bold')
-        .invoke('text')
-        .then((text) => {
-          const match = text.match(/([\d\.]+)M\+/);
-          if (match) {
-            const downloads = match[1];
-            cy.log(`Weekly downloads (million): ${downloads}`);
-          } else {
-            cy.log('Weekly downloads not found.');
-          }
+          .parent()
+          .find('div.font-bold')
+          .invoke('text')
+          .then((text) => {
+            const match = text.match(/([\d\.]+)M\+/);
+            if (match) {
+              const downloads = match[1];
+              cy.log(`Weekly downloads (million): ${downloads}`);
+            } else {
+              cy.log('Weekly downloads not found.');
+            }
         });
 
     });
